@@ -41,6 +41,8 @@
   border: 0px;
   outline: 0px;
   margin-left: 15px;
+  font-weight: 500;
+  font-family: inherit;
 }
 .header-down {
   justify-self: flex-end;
@@ -80,7 +82,10 @@
   flex-direction: column;
   align-items: flex-start;
 }
-
+.menu-item-episode-text {
+  font-size: 10px;
+  font-weight: 300;
+}
 @media (max-width: 850px) {
   .container {
     width: 100%;

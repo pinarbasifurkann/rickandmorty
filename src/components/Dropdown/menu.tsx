@@ -57,7 +57,9 @@ const Menu: FC<IProps> = inject("characters")(
               text={item.name}
               shouldBeBold={characters!.boldString}
             />
-            <div>{item.episode.length} Episodes</div>
+            <div className="menu-item-episode-text">
+              {item.episode.length} Episodes
+            </div>
           </div>
         </div>
       );
