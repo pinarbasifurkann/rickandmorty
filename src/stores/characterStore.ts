@@ -20,6 +20,7 @@ export class CharacterStore {
   error: string = "";
   selectedCharacters: Character[] = [];
   searchKey: string = "";
+  boldString: string = "";
 
   constructor() {
     makeObservable(this, {
@@ -27,6 +28,7 @@ export class CharacterStore {
       selectedCharacters: observable,
       searchKey: observable,
       isFetching: observable,
+      boldString: observable,
 
       getCharacters: action,
       addCharacter: action,
@@ -49,6 +51,7 @@ export class CharacterStore {
         .get<Data<Character[]>>(`character/?name=${this.searchKey}`)
         .then((response) => {
           runInAction(() => {
+            this.boldString = this.searchKey.trim();
             this.characters = response.data.results;
           });
         })
@@ -60,12 +63,14 @@ export class CharacterStore {
   };
 
   toggleCharacter(item: Character) {
-    const found = this.selectedCharacters.some((char) => char.id === item.id);
+    if (item) {
+      const found = this.selectedCharacters.some((char) => char.id === item.id);
 
-    if (found) {
-      this.removeCharacter(item);
-    } else {
-      this.addCharacter(item);
+      if (found) {
+        this.removeCharacter(item);
+      } else {
+        this.addCharacter(item);
+      }
     }
   }
 

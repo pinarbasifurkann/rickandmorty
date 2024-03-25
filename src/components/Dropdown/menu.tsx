@@ -53,7 +53,10 @@ const Menu: FC<IProps> = inject("characters")(
           <input type="checkbox" checked={found} />
           <img className="menu-item-image" alt="avatar" src={item.image} />
           <div className="menu-item-information">
-            <BoldedText text={item.name} shouldBeBold={characters!.searchKey} />
+            <BoldedText
+              text={item.name}
+              shouldBeBold={characters!.boldString}
+            />
             <div>{item.episode.length} Episodes</div>
           </div>
         </div>
