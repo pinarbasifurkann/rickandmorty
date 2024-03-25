@@ -8,7 +8,6 @@ export const registerClosedDropdownHandlers = () => {
       case "ArrowUp":
       case "Down":
       case "ArrowDown":
-      case " ": // Space
       case "Enter":
         e.preventDefault();
         setDropdown(true);
@@ -45,7 +44,6 @@ export const registerOpenDropdownHandlers = (
         );
         return;
       case "Enter":
-      case " ": // Space
         e.preventDefault();
         if (dropdownState.focusedIndex >= 0) {
           characterStore.toggleCharacter(

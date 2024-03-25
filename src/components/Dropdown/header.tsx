@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { runInAction } from "mobx";
 import { inject, observer } from "mobx-react";
@@ -14,12 +14,22 @@ const Header: FC<IProps> = inject("characters")(
   observer((props: IProps) => {
     const { characters } = props;
 
+    useEffect(() => {
+      const getData = setTimeout(() => {
+        fetchCharacters();
+      }, 500);
+      return () => clearTimeout(getData);
+    }, [characters!.searchKey]);
+
+    const fetchCharacters = () => {
+      characters!.getCharacters();
+      setFocused(-1);
+    };
+
     const handleChangeInput = (input: string) => {
       runInAction(() => {
         characters!.searchKey = input;
       });
-      setFocused(-1);
-      characters!.getCharacters();
     };
 
     const handleClick = (item: Character) => {
@@ -56,6 +66,7 @@ const Header: FC<IProps> = inject("characters")(
         <input
           className="header-input"
           onChange={(e) => handleChangeInput(e.target.value)}
+          value={characters!.searchKey}
           placeholder="Character Name"
         />
 
