@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 `yarn install` to install necessary packages
 
-`npm start` to run project
+`yarn start` to run project
 
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in your browser.
