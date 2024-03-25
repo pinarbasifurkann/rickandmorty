@@ -66,7 +66,6 @@
 .menu-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
   padding: 15px;
   border-bottom: 1px solid #94a3b8;
   font-size: 14px;

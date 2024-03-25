@@ -68,3 +68,14 @@ export const registerOpenDropdownHandlers = (
     document.removeEventListener("keydown", keyDownCallback);
   };
 };
+
+export const autoScrollToItem = () => {
+  const el = document.getElementById(dropdownState.focusedIndex.toString());
+  if (el) {
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "nearest",
+    });
+  }
+};

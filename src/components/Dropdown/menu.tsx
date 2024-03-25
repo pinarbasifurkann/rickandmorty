@@ -7,7 +7,10 @@ import Loader from "../Loader";
 
 import { CharacterStore } from "../../stores/characterStore";
 import { Character } from "../../stores/characterStore";
-import { registerOpenDropdownHandlers } from "../../helpers/keyboardListener";
+import {
+  autoScrollToItem,
+  registerOpenDropdownHandlers,
+} from "../../helpers/keyboardListener";
 import { dropdownState, setFocused } from ".";
 
 interface IProps {
@@ -19,8 +22,10 @@ const Menu: FC<IProps> = inject("characters")(
     const { characters } = props;
 
     useEffect(() => {
+      autoScrollToItem();
+
       return registerOpenDropdownHandlers(characters!);
-    }, []);
+    }, [dropdownState.focusedIndex]);
 
     const handleClick = (
       item: Character,
@@ -48,6 +53,7 @@ const Menu: FC<IProps> = inject("characters")(
           className="menu-item"
           onClick={() => handleClick(item, index, isFocused)}
           key={index}
+          id={index.toString()}
           style={isFocused ? { backgroundColor: "#dadee4" } : {}}
         >
           <input type="checkbox" checked={found} />
