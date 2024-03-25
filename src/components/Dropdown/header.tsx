@@ -15,6 +15,7 @@ const Header: FC<IProps> = inject("characters")(
     const { characters } = props;
 
     useEffect(() => {
+      // I set timeout on fetching data because fetching on every string change can cause some stability and performance issues.
       const getData = setTimeout(() => {
         fetchCharacters();
       }, 500);
