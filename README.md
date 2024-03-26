@@ -42,6 +42,9 @@ Vercel (Deployment)
     │      ├── Loader
     │            ├── index.tsx          # Loading spinner component,
     │
+    │      ├── Box
+    │            ├── MessageBox.tsx     # Message box component to show errors,
+    │
     ├── helpers
     │      ├── keyboardListener.ts      # Keyboard listeners for keyboard navigation,
     │
@@ -53,3 +56,4 @@ Vercel (Deployment)
     ├── styles
     │      ├── Dropdown.css             # Styling file for dropdown
     │      ├── Loader.css               # Styling file for loader
+    │      ├── MessageBox.css           # Styling file for message box

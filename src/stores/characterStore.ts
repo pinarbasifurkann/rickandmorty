@@ -2,6 +2,7 @@ import { action, makeObservable, observable, runInAction } from "mobx";
 
 import apiStore from "./apiStore";
 import { setDropdown } from "../components/Dropdown";
+import { showMessage } from "../components/Box/MessageBox";
 
 export interface Data<T> {
   results: T;
@@ -17,7 +18,6 @@ export interface Character {
 export class CharacterStore {
   characters: Character[] = [];
   isFetching: boolean = false;
-  error: string = "";
   selectedCharacters: Character[] = [];
   searchKey: string = "";
   boldString: string = "";
@@ -57,6 +57,7 @@ export class CharacterStore {
         })
         .catch((error) => {
           runInAction(() => (this.characters = []));
+          showMessage(error.response.data.error);
         });
     }
     runInAction(() => (this.isFetching = false));
