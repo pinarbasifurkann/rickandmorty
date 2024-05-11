@@ -5,6 +5,7 @@ import InformationPart from "../Parts/InformationPart";
 import Divider from "../Divider";
 
 import "../../styles/components/Layout.css";
+
 const Layout: FC = () => {
   return (
     <div className="layout-container">
