@@ -1,0 +1,30 @@
+.information-title {
+  font-size: 50px;
+  font-weight: 800;
+  background: linear-gradient(to right, #08609a, #00e696);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 50px 0px 0px 0px;
+}
+
+.information-text {
+  font-size: 20px;
+  font-weight: 200;
+  color: grey;
+}
+.information-subtext {
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 200;
+  color: #e83358;
+  padding: 0px 25px;
+}
+
+@media (max-width: 550px) {
+  .information-title {
+    font-size: 34px;
+  }
+  .information-text {
+    font-size: 14px;
+  }
+}

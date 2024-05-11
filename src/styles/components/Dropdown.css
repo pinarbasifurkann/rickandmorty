@@ -1,5 +1,5 @@
 .container {
-  width: 70%;
+  width: 100%;
 }
 .header {
   background-color: white;
@@ -11,6 +11,7 @@
   margin-bottom: 10px;
   border-radius: 5px;
   height: 40px;
+  box-shadow: 0px 0px 40px -10px white;
 }
 .header-selected {
   display: flex;
@@ -50,15 +51,17 @@
 }
 .menu {
   background-color: white;
+  text-align: left;
   color: black;
-  padding: 25px;
+  padding: 5px 25px;
   border-radius: 5px;
-  max-height: 500px;
+  max-height: 35vh;
   overflow-x: scroll;
 }
 .menu-info {
   font-size: 14px;
   font-weight: 300;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +73,9 @@
   border-bottom: 1px solid #94a3b8;
   font-size: 14px;
   cursor: pointer;
+}
+.menu-item:last-child {
+  border-bottom: 0px solid #94a3b8;
 }
 .menu-item-image {
   width: 40px;

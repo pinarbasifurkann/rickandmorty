@@ -2,8 +2,8 @@ import { FC } from "react";
 
 import { Provider } from "mobx-react";
 
-import Dropdown from "./components/Dropdown";
 import MessageBox from "./components/Box/MessageBox";
+import Layout from "./components/Main/Layout";
 
 import allStores from "./stores/allStores";
 
@@ -13,11 +13,9 @@ const App: FC = () => {
   return (
     <Provider {...allStores}>
       <div className="App">
-        <header className="App-header">
-          <MessageBox />
+        <MessageBox />
 
-          <Dropdown />
-        </header>
+        <Layout />
       </div>
     </Provider>
   );
